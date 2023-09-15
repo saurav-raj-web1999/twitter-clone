@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content{
+            width: 55%;
+            height: 55%;
+            background-image: url('img/404_error.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        @media (max-width: 900px) {            
+            .content{
+                width: 59%;
+                height: 59%;
+                background-size:contain;
+            }
+        }
+        @media (max-width: 780px) {            
+            .content{
+                width: 70%;
+                height: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content"></div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitter | Profile</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="Full-container">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-primary mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><span class="ms-5"><i class="fa-brands fa-twitter h1"></i>Twitter </span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <span class="nav-link active text-white" style="cursor: pointer;" id="home">Home</span>
+            </li>
+            <li class="nav-item ms-5">
+              <!-- <a class="nav-link text-white" href="/profile">Profile</a> -->
+              <span class="nav-link text-white" style="cursor: pointer;" id="profile">Profile</span>
+            </li>
+            <li class="nav-item ms-5">
+              <!-- <a class="nav-link text-white" href="#">Posts</a> -->
+              <span class="nav-link text-white" style="cursor: pointer;" id="posts">Posts</span>
+            </li>
+            <li class="nav-item ms-5">
+              <a class="nav-link text-white" href="/logout">Logout</a>
+              <!-- <span class="nav-link text-white" style="cursor: pointer;" id="following">Following</span> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="me-5 profile-image online">
+        <img src="<%= user.profileImage %>" alt="Profile pic">
+      </div>
+    </nav>
+
+    <!-- User Home page  -->
+    <div class="container d-flex flex-column align-items-center user-content">
+
+      <!--Create post section  -->
+      
+
+      <div id="content-1">
+        <form action="/posts" method="POST">
+          <div class="card">
+            <div class="card-header text-light-emphasi fs-4 fw-medium">
+              <img src="<%= user.profileImage %>" alt="">
+              What's happening?
+            </div>
+            <div class="card-body">
+              <textarea class="form-control" id="exampleDataList" list="datalistOptions" placeholder="Type here..."
+                name="content"></textarea>
+              <p class="card-text">Twit your thoughts and idea or express your views to the world (max 100 words).</p>
+              <input type="text" class="form-control"  name="img" placeholder="Image link...">
+              <label for="fileimage" class="file-image-icon"><i class="fa-regular fa-image"></i></label>
+              <input type="file" id="fileimage">
+              <textarea name="hidden" id="hidden"></textarea>
+              <input class="btn btn-info text-light" type="submit" value="Post Now">
+            </div>
+          </div>
+        </form>
+        
+        <!-- Post section  -->
+        <% for(let i=posts.length-1; i>=0;i--) {%>
+        <div class="post mt-5 mb-3 p-3">
+          <div class="post-profile-pic">
+            <img src="<%= posts[i].userImage %>" alt="" />
+          </div>
+          
+          <div class="post-box">
+            <div class="post-header">
+              <div class="post-header-name">
+                <h3>
+                  <%= posts[i].postBy %> <span class="post-user-id"> @<%= posts[i].postBy.toLowerCase() %></span>
+                </h3>
+              </div>
+              <div class="post-header-description">
+                <p><%= posts[i].content %></p>
+              </div>
+            </div>
+            <img
+              src="<%= posts[i].img %>"
+              alt="" />
+            <div class="post-footer">
+              <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> 150</span></i>
+              <i class="fa-regular fa-heart" id="faHeart"></i>
+            </div>
+          </div>
+        </div>
+        <% } %>
+
+      </div>
+
+      <!-- Content No 2 -->
+      <div id="content-2">
+        <div class="card mt-3 mb-3 p-3" style="max-width: 540px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="<%= user.profileImage %>" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title fs-2" style="margin-top: -15px;">
+                  <%= user.name %>
+                </h5>
+                <p class="card-text">Hey here I am using Twitter.</p>
+                <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Email :</span>
+                    <%= user.email %>
+                  </small></p>
+                <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Gender :</span>
+                    <%= user.gender %>
+                  </small></p>
+                <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Active :</span>
+                    <%= user.date %>
+                  </small></p>
+                <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Total Post :</span>
+                    <%= totalPost%></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="content-3">
+        <!-- Post section  -->
+
+        <!-- **** -->
+        <% for(let i=0;i<userTwit.length;i++) {%>
+          <div class="post mt-5 mb-3 p-3">
+            <div class="post-profile-pic">
+              <img src="<%= userTwit[i].userImage %>" alt="" />
+            </div>
+            
+            <div class="post-box">
+              <div class="post-header">
+                <div class="post-header-name">
+                  <h3>
+                    <%= userTwit[i].postBy %> <span class="post-user-id"> @<%= userTwit[i].postBy.toLowerCase() %></span>
+                  </h3>
+                </div>
+                <div class="post-header-description">
+                  <p><%= userTwit[i].content %></p>
+                </div>
+              </div>
+              <img
+                src="<%= userTwit[i].img %>"
+                alt="" />
+              <div class="post-footer">
+                <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> <%= totalPost %></span></i>
+                <i class="fa-regular fa-heart" id="faHeart"></i>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        <!-- **** -->
+        
+
+        
+
+
+        <!-- **** -->
+      </div>
+
+
+
+
+
+
+
+      <!-- **** -->
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+
+  <script>
+    const heart = document.getElementById('FaHeart');
+    const Content_1 = document.getElementById('content-1');
+    const Content_2 = document.getElementById('content-2');
+    const Content_3 = document.getElementById('content-3');
+    const home = document.getElementById('home');
+    const profile = document.getElementById('profile');
+    const post = document.getElementById('posts');
+    const hidden = document.getElementById('hidden');
+    const File = document.getElementById('fileimage');
+
+    let page = "home";
+
+    home.addEventListener('click', () => {
+      if (page != "home") {
+        page = "home";
+        Content_2.setAttribute('style', "display: none;")
+        Content_3.setAttribute('style', "display: none;")
+        Content_1.setAttribute('style', "display: block;")
+      }
+    })
+
+    profile.addEventListener('click', () => {
+      if (page != "profile") {
+        page = "profile";
+        Content_1.setAttribute('style', "display: none;")
+        Content_3.setAttribute('style', "display: none;")
+        Content_2.setAttribute('style', "display: block;")
+      }
+    })
+    post.addEventListener('click', () => {
+      if (page != "post") {
+        page = "post";
+        Content_1.setAttribute('style', "display: none;")
+        Content_2.setAttribute('style', "display: none;")
+        Content_3.setAttribute('style', "display: block;")
+      }
+    })
+
+    heart.addEventListener('click', () => {
+      heart.classList.toggle("fa-solid");
+      heart.classList.toggle("faHeart-color");
+    })
+
+    // file.addEventListener('change', e => {
+    //   const file = File.files[0];
+    //   const reader = new FileReader();
+
+    //   reader.addEventListener('load', () => {
+    //     hidden.value = reader.result;
+    //     console.log(reader.result);
+    //   })
+    //   reader.readAsDataURL(file);
+    // })
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
