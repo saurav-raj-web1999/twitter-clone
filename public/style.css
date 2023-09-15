@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+i{
+    cursor: pointer;
+}
+
+
+/* Index page Start */
+
+.profile-image img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.online {
+    position: relative;
+}
+
+.online::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: #41db51;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
+
+.user-content {
+    min-height: 600px;
+}
+
+.file-image-icon {
+    margin-right: 30px;
+    color: #26a7de;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#fileimage {
+    /* display: none; */
+    opacity: 0;
+    /* visibility: none; */
+}
+
+textarea {
+    resize: none;
+}
+
+.card-header img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+
+@media (max-width:992px) {
+    .profile-image {
+        display: none;
+    }
+}
+
+
+.post-profile-pic img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #e6ecf0;
+    border-radius: 4px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding-bottom: 10px;
+}
+
+.post-box img {
+    width: 400px;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    user-select: none;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 19px;
+    user-select: none;
+}
+
+
+.post-user-id {
+    font-weight: 600;
+    font-size: 12px;
+    color: gray;
+}
+
+.post-header-name h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.post-header-description {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.post-box {
+    flex: 1;
+    padding: 10px;
+}
+
+.post-profile-pic {
+    padding: 20px;
+    user-select: none;
+}
+
+.faHeart-color{
+    color: red;    
+}
+/* Index page End */
+
+
+
+/* Login Page Start */
+#signUp {
+    cursor: pointer;
+}
+
+.content {
+    width: 100vw;
+    /* height: 400px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.content form {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+/* #content-1{
+    display: none;
+} */
+#content-2{
+    display: none;
+}
+#content-3{
+    display: none;
+}
+
+
+
+/* #sign-in {
+    display: none;
+} */
+#signUpForm {
+    display: none;
+}
+
+#hidden{
+    height: 5px;
+    width: 15px;
+    opacity: 0;
+    user-select: none;
+}
+/* Login Page End  */
+
+
+

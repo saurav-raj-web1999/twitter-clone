@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitter</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="Full-container">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-primary mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><span class="ms-5"><i
+              class="fa-brands fa-twitter h1"></i>Twitter</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ms-5" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <span class="nav-link active text-white" style="cursor: pointer;" id="home" >Home</span>
+            </li>
+            <li class="nav-item ms-5">
+              <span class="nav-link text-white" style="cursor: pointer;" id="profile">Profile</span>
+            </li>
+            <li class="nav-item ms-5">
+              <span class="nav-link text-white" style="cursor: pointer;" id="posts">Posts</span>
+            </li>
+            <li class="nav-item ms-5">
+              <span class="nav-link text-white" style="cursor: pointer;" id="following">Following</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="me-5 profile-image online">
+        <img src="img/default_image.png" alt="Profile pic">
+      </div>
+    </nav>
+
+    <!-- User Home page  -->
+    <div class="container d-flex flex-column align-items-center user-content">
+
+      <!-- Content No 1 -->
+      <div id="content-1">
+        <!--Create post section  -->
+        <div class="card">
+          <div class="card-header text-light-emphasi fs-4 fw-medium">
+            <img src="https://images.unsplash.com/photo-1623091411395-09e79fdbfcf3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="">
+            What's happening?
+          </div>
+          <div class="card-body">
+            <textarea class="form-control" id="exampleDataList" list="datalistOptions"
+              placeholder="Type here..."></textarea>
+            <p class="card-text">Twit your thoughts and idea or express your views to the world (max 100 words).</p>
+            <label for="fileimage" class="file-image-icon"><i class="fa-regular fa-image"></i></label>
+            <input type="file" name="image" id="fileimage">
+            <a href="#" class="btn btn-info text-light">Post Now</a>
+          </div>
+        </div>
+
+        <!-- Post section  -->
+        <div class="post mt-5 mb-3 p-3">
+          <div class="post-profile-pic">
+            <img src="https://images.unsplash.com/photo-1623091411395-09e79fdbfcf3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="" />
+          </div>
+
+          <div class="post-box">
+            <div class="post-header">
+              <div class="post-header-name">
+                <h3> Saurav Raj <span class="post-user-id"> @saurav</span> </h3>
+              </div>
+              <div class="post-header-description">
+                <p>Hey I am enjoying this views.</p>
+              </div>
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+              alt="" />
+            <div class="post-footer">
+              <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> 150</span></i>
+              <i class="fa-regular fa-heart" id="FaHeart"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mt-5 mb-3 p-3">
+          <div class="post-profile-pic">
+            <img src="https://images.unsplash.com/photo-1623091411395-09e79fdbfcf3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="" />
+          </div>
+
+          <div class="post-box">
+            <div class="post-header">
+              <div class="post-header-name">
+                <h3> Saurav Raj <span class="post-user-id"> @saurav</span> </h3>
+              </div>
+              <div class="post-header-description">
+                <p>Hey I am enjoying this views.</p>
+              </div>
+            </div>
+            <img
+              src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+              alt="" />
+            <div class="post-footer">
+              <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> 150</span></i>
+              <i class="fa-regular fa-heart" id="FaHeart"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- Content No 2 -->
+      <div id="content-2">
+        <div class="content mt-5"> 
+          <div class="card mb-3 p-3" style="max-width: 540px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://imgv3.fotor.com/images/gallery/Realistic-Male-Profile-Picture.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Saurav Raj</h5>
+                    <p class="card-text">Hey here I am using Twitter.</p>
+                    <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Email :</span> saurav@gmail.com</small></p>
+                    <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Gender :</span> Male</small></p>
+                    <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Active :</span> 24 Oct 2020</small></p>
+                    <p class="card-text"><small class="text-body-secondary"><span class="fw-bolder"> Total Post :</span> 10</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>         
+      </div>
+      </div>
+
+      <div id="content-3">
+        <!-- Post section  -->
+        <div class="post mt-5 mb-3 p-3">
+          <div class="post-profile-pic">
+            <img src="img/default_image.png" alt="" />
+          </div>
+  
+          <div class="post-box">
+            <div class="post-header">
+              <div class="post-header-name">
+                <h3> Saurav Raj <span class="post-user-id" > @saurav</span> </h3>
+              </div>
+              <div class="post-header-description">
+                <p>Hey I am enjoying this views.</p>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="" />
+            <div class="post-footer">
+              <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> 150</span></i>
+              <i class="fa-regular fa-heart" id="faHeart"></i>
+            </div>
+          </div>
+      </div>
+      
+      <div class="post mt-5 mb-3 p-3">
+          <div class="post-profile-pic">
+            <img src="img/default_image.png" alt="" />
+          </div>
+  
+          <div class="post-box">
+            <div class="post-header">
+              <div class="post-header-name">
+                <h3> Saurav Raj <span class="post-user-id" > @saurav</span> </h3>
+              </div>
+              <div class="post-header-description">
+                <p>Hey I am enjoying this views.</p>
+              </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="" />
+            <div class="post-footer">
+              <i class="fa-solid fa-repeat"><span style="font-size: 10px;"> 150</span></i>
+              <i class="fa-regular fa-heart" id="faHeart"></i>
+            </div>
+          </div>
+      </div>
+
+
+      </div> 
+
+
+
+      
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+  <script>
+    const heart = document.getElementById('FaHeart');
+    const Content_1 = document.getElementById('content-1');
+    const Content_2 = document.getElementById('content-2');
+    const Content_3 = document.getElementById('content-3');
+    const home = document.getElementById('home');
+    const profile = document.getElementById('profile');
+    const post = document.getElementById('posts');
+    
+    let page = "home";
+    
+    home.addEventListener('click', ()=>{      
+      if(page != "home"){
+        page = "home";
+        Content_2.setAttribute('style',"display: none;")
+        Content_3.setAttribute('style',"display: none;")
+        Content_1.setAttribute('style', "display: block;")
+      }
+    })
+
+    profile.addEventListener('click', ()=>{
+      if(page != "profile"){
+        page = "profile";
+        Content_1.setAttribute('style',"display: none;")
+        Content_3.setAttribute('style', "display: none;")
+        Content_2.setAttribute('style', "display: block;")
+      }      
+    })
+    post.addEventListener('click', ()=>{
+      if(page != "post"){
+        page = "post";
+        Content_1.setAttribute('style', "display: none;")
+        Content_2.setAttribute('style', "display: none;")
+        Content_3.setAttribute('style',"display: block;")
+      }      
+    })
+
+    heart.addEventListener('click', () => {
+      heart.classList.toggle("fa-solid");
+      heart.classList.toggle("faHeart-color");
+    })
+
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
